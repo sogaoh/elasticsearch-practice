@@ -1,7 +1,7 @@
 # elasticsearch-practice
 
 ## これは何？
-個人的に Elasticsearch を練習する用の環境起動用ファイルです
+個人的に Elasticsearch を練習する意図の環境起動用ファイル一式です
 
 ## 起動方法
 ```
@@ -12,4 +12,4 @@ docker-compose up -d
 ```
 
 ## refs
-- [Elasticsearch + Kibana を docker-compose でさくっと動かす - Qiita](https://qiita.com/nobuman/items/6308ea3bfd0aa0c58fdb)]
+- [Elasticsearch + Kibana を docker-compose でさくっと動かす - Qiita](https://qiita.com/nobuman/items/6308ea3bfd0aa0c58fdb)
