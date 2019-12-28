@@ -11,5 +11,16 @@ cd elasticsearch-practice
 docker-compose up -d
 ```
 
+## Applications
+- Elasticsearch
+    - http://localhost:9200/
+- Kibana 
+    - http://localhost:5601/
+
+## Plugins
+- Elasticsearch
+    - kuromoji
+
 ## refs
 - [Elasticsearch + Kibana を docker-compose でさくっと動かす - Qiita](https://qiita.com/nobuman/items/6308ea3bfd0aa0c58fdb)
+- [(日本語用のAnalyzerであるプラグインanalysis-kuromojiを入れる)](https://tsgkdt.hatenablog.jp/entry/2019/01/03/215752)
