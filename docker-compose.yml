@@ -16,6 +16,11 @@ services:
       - 9200:9200
     volumes:
       - ./es-data:/usr/share/elasticsearch/data
+      - ./install-plugin.sh:/tmp/install-plugin.sh
+    entrypoint: >
+      bash -c "chmod +x /tmp/install-plugin.sh &&
+               /tmp/install-plugin.sh analysis-kuromoji &&
+              docker-entrypoint.sh"
   kibana:
     image: docker.elastic.co/kibana/kibana:7.5.0
     ports:
