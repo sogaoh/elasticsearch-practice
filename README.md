@@ -23,7 +23,7 @@ docker-compose up -d
     - kuromoji
 
 
-## How to import `world.sql`
+## How to import `world.sql` to DB
 MySQL のサンプルDB `world.sql` を投入する手順
 
 - https://dev.mysql.com/doc/index-other.html から `world database` をダウンロード
@@ -35,8 +35,11 @@ MySQL のサンプルDB `world.sql` を投入する手順
     - `mysql -u root mydb -p < world.sql`
     - `mysql -u root mydb -p` で DBに接続してデータを確認
 
+DB から ElasticSearch への投入は refs の (*1) を参照して Python のスクリプトを適宜利用してください
+
+
 ## refs
 - [Elasticsearch + Kibana を docker-compose でさくっと動かす - Qiita](https://qiita.com/nobuman/items/6308ea3bfd0aa0c58fdb)
 - [(日本語用のAnalyzerであるプラグインanalysis-kuromojiを入れる)](https://tsgkdt.hatenablog.jp/entry/2019/01/03/215752)
 - [docker-compose MySQL8.0 のDBコンテナを作成する](https://qiita.com/ucan-lab/items/b094dbfc12ac1cbee8cb)
-- [MySQL(MariaDB)の表データからElasticsearchのインデックスにデータをインポートする](https://qiita.com/halhosono/items/91a54ef1ac691f43c11c)
+- (*1) [MySQL(MariaDB)の表データからElasticsearchのインデックスにデータをインポートする](https://qiita.com/halhosono/items/91a54ef1ac691f43c11c) 
