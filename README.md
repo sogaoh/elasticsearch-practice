@@ -29,11 +29,12 @@ MySQL のサンプルDB `world.sql` を投入する手順
 - https://dev.mysql.com/doc/index-other.html から `world database` をダウンロード
 - ダウンロードしたデータを docker/mysql/sql/ ディレクトリに置いて、 `make upb` # docker-compose up -d --build
 - dbコンテナに入り、以下を順次実行する
-    - `docker-compose exec -it ${dbコンテナの CONTAINER ID or NAME} bash`
+    - `docker exec -it elasticsearch-practice_db_1 bash`
+        - ( `docker exec -it ${dbコンテナの CONTAINER ID or NAME} bash` )
     - `cd docker-entrypoint-initdb.d`
     - (ls して world.sql.* の存在を確認。適宜、解凍する)
-    - `mysql -u root mydb -p < world.sql`
-    - `mysql -u root mydb -p` で DBに接続してデータを確認
+    - `mysql -u root -p < world.sql`
+    - `mysql -u root world -p` で DBに接続してデータを確認
 
 DB から ElasticSearch への投入は refs の (*1) を参照して Python のスクリプトを適宜利用してください
 
