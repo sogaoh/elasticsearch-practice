@@ -67,4 +67,4 @@ world database の city テーブルを Logstash を使って ElasticSearch に�
 
 
 # Footnote
-[^1]: ダウンロードにはOracleアカウントのサインアップが必要になる
+[^1] : ダウンロードにはOracleアカウントのサインアップが必要になる
