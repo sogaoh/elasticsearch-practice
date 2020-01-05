@@ -27,7 +27,11 @@ docker-compose up -d
 ## Practice(s)
 
 ### 1. MySQLのデータをElasticSearchに取り込む
-データと MySQLのJDBCコネクタ はこのリポジトリに同梱していないので取得が必要です
+
+データと MySQLのJDBCコネクタ はこのリポジトリに同梱していないので取得が必要です  
+-> 同梱するようにしたので取得不要です。起動すれば取り込まれます。  
+　（マシンスペックによるものの、結構時間かかります）
+
 
 #### How to import `world.sql` to DB
 MySQL のサンプルDB `world.sql` を投入する手順
@@ -64,7 +68,8 @@ world database の city テーブルを Logstash を使って ElasticSearch に�
 - [docker-compose MySQL8.0 のDBコンテナを作成する](https://qiita.com/ucan-lab/items/b094dbfc12ac1cbee8cb)
 - (*1) [MySQL(MariaDB)の表データからElasticsearchのインデックスにデータをインポートする](https://qiita.com/halhosono/items/91a54ef1ac691f43c11c) 
 - [Dockerで、DatabaseからElasticsearchにLogstashを使ってデータを流してみた](https://qiita.com/takayuki-miura0203/items/ba9d59a8b267d785d0c6)
-
+- [[solved] Multiple logstash config file - Logstash - Discuss the Elastic Stack](https://discuss.elastic.co/t/solved-multiple-logstash-config-file/51692/10)
+- [LogstashがElasticsearchにつながらない - Discuss the Elastic Stack](https://discuss.elastic.co/t/logstash-elasticsearch/206159/2)
 
 # Footnote
 [^1] : ダウンロードにはOracleアカウントのサインアップが必要になる

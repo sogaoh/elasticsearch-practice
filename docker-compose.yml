@@ -3,6 +3,7 @@ version: "3"
 services:
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.5.1
+    container_name: elasticsearch
     environment:
       - discovery.type=single-node
       - cluster.name=docker-cluster
@@ -14,6 +15,9 @@ services:
         hard: -1
     ports:
       - 9200:9200
+      - 9300:9300
+    networks:
+      - esnet
     volumes:
       - ./es-data:/usr/share/elasticsearch/data
       - ./install-plugin.sh:/tmp/install-plugin.sh
@@ -21,23 +25,36 @@ services:
       bash -c "chmod +x /tmp/install-plugin.sh &&
                /tmp/install-plugin.sh analysis-kuromoji &&
               docker-entrypoint.sh"
+
   kibana:
     image: docker.elastic.co/kibana/kibana:7.5.1
+    container_name: kibana
     ports:
       - 5601:5601
-
-#  logstash:
-#    build:
-#      context: ./docker
-#      dockerfile: logstash/Dockerfile
-#    ports:
-#      - 5044:5044
+    networks:
+      - esnet
+  
+  logstash:
+    build:
+      context: ./docker
+      dockerfile: logstash/Dockerfile
+    container_name: logstash
+    ports:
+      - 5044:5044
+      - 9600:9600
+    depends_on:
+      - elasticsearch
+    links:
+      - elasticsearch:elasticsearch  
+    networks:
+      - esnet
 
   db:
     #image: mysql:8.0
     build:
       context: ./docker
       dockerfile: mysql/Dockerfile
+    container_name: mysql
     volumes:
       - db-store:/var/lib/mysql
       - ./logs:/var/log/mysql
@@ -50,6 +67,11 @@ services:
       - TZ=${TZ}
     ports:
       - ${DB_PORT}:3306
+    networks:
+      - esnet
+
+networks:
+  esnet:
 
 volumes:
   db-store:
