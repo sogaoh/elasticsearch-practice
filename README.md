@@ -28,7 +28,7 @@ docker-compose up -d
 
 ### 1. MySQLのデータをElasticSearchに取り込む
 
-データと MySQLのJDBCコネクタ はこのリポジトリに同梱していないので取得が必要です  
+~~データと MySQLのJDBCコネクタ はこのリポジトリに同梱していないので取得が必要です~~  
 -> 同梱するようにしたので取得不要です。起動すれば取り込まれます。  
 　（マシンスペックによるものの、結構時間かかります）
 
@@ -39,7 +39,7 @@ MySQL のサンプルDB `world.sql` を投入する手順
 - https://dev.mysql.com/doc/index-other.html から `world database` をダウンロード
 - ダウンロードしたデータを docker/mysql/sql/ ディレクトリに置いて、 `make upb` # docker-compose up -d --build
 - dbコンテナに入り、以下を順次実行する
-    - `docker exec -it elasticsearch-practice_db_1 bash`
+    - `docker exec -it mysql bash`
         - ( `docker exec -it ${dbコンテナの CONTAINER ID or NAME} bash` )
     - `cd docker-entrypoint-initdb.d`
     - (ls して world.sql.* の存在を確認。適宜、解凍する)
