@@ -2,7 +2,10 @@ version: "3"
 
 services:
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.5.1
+    #image: docker.elastic.co/elasticsearch/elasticsearch:7.5.1
+    build:
+      context: ./docker
+      dockerfile: elasticsearch/Dockerfile
     container_name: elasticsearch
     environment:
       - discovery.type=single-node
@@ -27,7 +30,10 @@ services:
               docker-entrypoint.sh"
 
   kibana:
-    image: docker.elastic.co/kibana/kibana:7.5.1
+    #image: docker.elastic.co/kibana/kibana:7.5.1
+    build:
+      context: ./docker
+      dockerfile: kibana/Dockerfile
     container_name: kibana
     ports:
       - 5601:5601
