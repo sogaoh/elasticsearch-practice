@@ -22,8 +22,8 @@ services:
     networks:
       - esnet
     volumes:
-      - ./es-data:/usr/share/elasticsearch/data
-      - ./install-plugin.sh:/tmp/install-plugin.sh
+      - es-data:/usr/share/elasticsearch/data
+      - ./docker/elasticsearch/install-plugin.sh:/tmp/install-plugin.sh
     entrypoint: >
       bash -c "chmod +x /tmp/install-plugin.sh &&
                /tmp/install-plugin.sh analysis-kuromoji &&
@@ -86,3 +86,8 @@ networks:
 
 volumes:
   db-store:
+    external: true
+  #logs:
+  #  external: true
+  es-data:
+    external: true
