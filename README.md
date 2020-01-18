@@ -3,8 +3,23 @@
 ## これは何？
 個人的に Elasticsearch を練習する意図の環境起動用ファイル一式です
 
-## 起動方法
+## Pre-Requirements
+- Docker (version 19.03.5, build 633a0ea)
+- docker-compose (version 1.24.1, build 4667896b)
+
+## 起動手順
+
+### Volume作成
+
+```sh
+docker volume create db-store
+docker volume create es-data
+
+#docker volume create db-log  # 書き込みがうまくいかないのでローカルで保持する
 ```
+
+### 一式の取得と起動
+```sh
 git clone https://github.com/sogaoh/elasticsearch-practice.git
 cd elasticsearch-practice
 
