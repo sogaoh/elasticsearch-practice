@@ -69,7 +69,8 @@ services:
       - db-store:/var/lib/mysql
       - ./logs:/var/log/mysql
       - ./docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
-      - ./docker/mysql/sql/world.sql.gz:/docker-entrypoint-initdb.d/world.sql.gz
+      - ./docker/mysql/sql/1_world.sql.gz:/docker-entrypoint-initdb.d/1_world.sql.gz
+      - ./docker/mysql/sql/2_ALTER.sql:/docker-entrypoint-initdb.d/2_ALTER.sql
     environment:
       - MYSQL_DATABASE=${DB_NAME}
       - MYSQL_USER=${DB_USER}
