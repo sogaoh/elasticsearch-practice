@@ -85,6 +85,7 @@ world database の city テーブルを Logstash を使って ElasticSearch に�
 - [Dockerで、DatabaseからElasticsearchにLogstashを使ってデータを流してみた](https://qiita.com/takayuki-miura0203/items/ba9d59a8b267d785d0c6)
 - [[solved] Multiple logstash config file - Logstash - Discuss the Elastic Stack](https://discuss.elastic.co/t/solved-multiple-logstash-config-file/51692/10)
 - [LogstashがElasticsearchにつながらない - Discuss the Elastic Stack](https://discuss.elastic.co/t/logstash-elasticsearch/206159/2)
+- [絶対的に使った方がいいLogstashのMultiple Pipelinesについて書いてみた - Qiita](https://qiita.com/micci184/items/24e197a168891f089b3d)
 
 # Footnote
 [^1] : ダウンロードにはOracleアカウントのサインアップが必要になる
