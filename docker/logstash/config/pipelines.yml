@@ -1,0 +1,14 @@
+- pipeline.id: city
+  pipeline.batch.size: 125
+  pipeline.workers: 1
+  path.config: "/usr/share/logstash/pipeline/city.conf"
+
+- pipeline.id: country
+  pipeline.batch.size: 125
+  pipeline.workers: 1
+  path.config: "/usr/share/logstash/pipeline/country.conf"
+
+- pipeline.id: countrylanguage
+  pipeline.batch.size: 125
+  pipeline.workers: 1
+  path.config: "/usr/share/logstash/pipeline/countrylanguage.conf"

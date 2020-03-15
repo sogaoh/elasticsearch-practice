@@ -48,6 +48,7 @@ services:
     container_name: logstash
     volumes:
       - ./docker/logstash/mysql-connector-java-8.0.19.jar:/usr/share/logstash/mysql-connector-java-8.0.19.jar
+      - ./docker/logstash/config/pipelines.yml:/usr/share/logstash/config/pipelines.yml
       - ./docker/logstash/pipeline:/usr/share/logstash/pipeline
     ports:
       - 5044:5044
